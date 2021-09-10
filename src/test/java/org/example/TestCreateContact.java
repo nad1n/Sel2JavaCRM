@@ -20,7 +20,7 @@ public class TestCreateContact {
 
     @BeforeClass
     public static void setup() {
-        System.setProperty("webdriver.chrome.driver", "src/main/java/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
         profilePage = new ProfilePage(driver);

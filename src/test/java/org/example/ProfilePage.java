@@ -22,11 +22,17 @@ public class ProfilePage {
     @FindBy(xpath = "//a[text()='Создать проект']")
     private WebElement createProjectItem;
 
-    public void clickProjectMenuItem() {
+    public void clickToCreateProject() {
         Actions actions = new Actions(driver);
         actions.moveToElement(projectMenuItem).perform();
         projectMenuItem2.click();
         createProjectItem.click();
+    }
+
+    public void clickToAllProject() {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(projectMenuItem).perform();
+        projectMenuItem2.click();
     }
 
     @FindBy(xpath = "//span[text()='Контрагенты']/ancestor::a")
@@ -44,5 +50,14 @@ public class ProfilePage {
         projectMenuContr2.click();
         createContact.click();
     }
+
+    @FindBy(xpath = "//*[@id=\"user-menu\"]/a")
+    private WebElement userMenu;
+
+    public String getUserName() {
+        String userName = userMenu.getText();
+        return userName;
+    }
+
 
 }
