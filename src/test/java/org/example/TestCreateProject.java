@@ -43,9 +43,6 @@ public class TestCreateProject {
         String user = profilePage.getUserName();
         Assert.assertEquals("Applanatest1 Applanatest1 Applanatest1", user);
 
-
-
-
         profilePage.clickToCreateProject();
 
         createProject.inputProjectName("test_project_Aleksieienko40");

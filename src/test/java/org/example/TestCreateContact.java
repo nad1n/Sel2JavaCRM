@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 
 public class TestCreateContact {
 
-    private static final String LOGIN_PAGE_URL = "https://crm.geekbrains.space/user/login";
     public static LoginPage loginPage;
     public static ProfilePage profilePage;
     public static CreateContact createContact;
@@ -27,13 +26,13 @@ public class TestCreateContact {
         createContact = new CreateContact(driver);
         driver.manage().window().setSize(new Dimension(1248, 883));
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(LOGIN_PAGE_URL);
+        driver.get(ConfProperties.getProperty("loginPage"));
     }
 
     @Test
     public void createContactTest() {
-        loginPage.inputLogin("Applanatest1");
-        loginPage.inputPasswd("Student2020!");
+        loginPage.inputLogin(ConfProperties.getProperty("login"));
+        loginPage.inputPasswd(ConfProperties.getProperty("password"));
         loginPage.clickLoginBtn();
 
         profilePage.clickProjectMenuContr();
